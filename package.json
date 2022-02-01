@@ -2,9 +2,14 @@
   "name": "mad2fa",
   "version": "1.0.0",
   "description": "This package allows you to use 2FA to your app. NFC token and software-based authenticator",
-  "main": "src/index.js",
+  "main": "./lib/cjs/index.js",
+  "module": "./lib/ems/index.js",
+  "files": [
+    "./lib"
+  ],
   "scripts": {
-    "compile": "npx tsc -p tsconfig.json",
+    "compile": "npx tsc -p tsconfig.json && npx tsc -p tsconfig-cjs.json",
+    "prepublish": "npm run compile",
     "test": "jest"
   },
   "lint-staged": {
@@ -12,7 +17,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "gitrepo.git"
+    "url": "https://github.com/mad4n7/mad2fa.git"
   },
   "keywords": [
     "mad2fa",
@@ -21,11 +26,13 @@
     "two",
     "factor",
     "authentication",
-    "USB",
-    "NFC",
-    "security key nfc"
+    "usb",
+    "usb-c",
+    "security",
+    "nfc",
+    "auth"
   ],
-  "author": "mad4n7",
+  "author": "Arthur Silva <me@mad4n7.com>",
   "license": "MIT",
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^5.10.2",
