@@ -2,8 +2,8 @@
   "name": "mad2fa",
   "version": "1.0.0",
   "description": "This package allows you to use 2FA to your app. NFC token and software-based authenticator",
-  "main": "./lib/cjs/index.js",
-  "module": "./lib/ems/index.js",
+  "main": "./lib/cjs/mad2fa.js",
+  "module": "./lib/ems/mad2fa.js",
   "files": [
     "./lib"
   ],
@@ -30,11 +30,14 @@
     "usb-c",
     "security",
     "nfc",
-    "auth"
+    "auth",
+    "otp",
+    "totp"
   ],
   "author": "Arthur Silva <me@mad4n7.com>",
   "license": "MIT",
   "devDependencies": {
+    "@types/node": "^17.0.21",
     "@typescript-eslint/eslint-plugin": "^5.10.2",
     "@typescript-eslint/parser": "^5.10.2",
     "eslint": "^7.32.0",
@@ -46,5 +49,8 @@
     "eslint-plugin-react": "^7.28.0",
     "prettier": "2.5.1",
     "typescript": "^4.5.5"
+  },
+  "dependencies": {
+    "jssha": "^3.2.0"
   }
 }
